@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>🎄 Christmas Tree</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+    }
+    #musicBtn {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      padding: 10px 14px;
+      border-radius: 20px;
+      border: none;
+      background: rgba(255,255,255,0.85);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<button id="musicBtn">🎵 播放音乐</button>
+
+<audio id="bgm" loop>
+  <!-- 在线圣诞音乐（可换） -->
+  <source src="https://cdn.pixabay.com/audio/2022/12/22/audio_5e3b6e0a92.mp3" type="audio/mpeg">
+</audio>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/RGBELoader.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+
+<script src="main.js"></script>
+<script src="hand.js"></script>
+
+<script>
+  const btn = document.getElementById("musicBtn");
+  const bgm = document.getElementById("bgm");
+  btn.onclick = () => {
+    bgm.play();
+    btn.style.display = "none";
+  };
+</script>
+
+</body>
+</html>
